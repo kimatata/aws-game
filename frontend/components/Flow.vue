@@ -1,10 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { VueFlow, useVueFlow } from '@vue-flow/core'
 import { Background } from '@vue-flow/background'
 import { ControlButton, Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
-import { initialEdges, initialNodes } from './initial-elements.js'
+import { initialEdges, initialNodes } from './initial-elements'
 import Icon from './Icon.vue'
 
 /**
@@ -12,13 +12,9 @@ import Icon from './Icon.vue'
  * You can pass the composable an object that has the same properties as the VueFlow component props
  */
 const { onPaneReady, onNodeDragStop, onConnect, addEdges, setViewport, toObject } = useVueFlow()
-
 const nodes = ref(initialNodes)
-
 const edges = ref(initialEdges)
-
-// our dark mode toggle flag
-const dark = ref(false)
+const theme = useTheme()
 
 /**
  * This is a Vue Flow event-hook which can be listened to from anywhere you call the composable, instead of only on the main component
@@ -84,16 +80,13 @@ function resetTransform() {
   setViewport({ x: 0, y: 0, zoom: 1 })
 }
 
-function toggleDarkMode() {
-  dark.value = !dark.value
-}
 </script>
 
 <template>
   <VueFlow
     :nodes="nodes"
     :edges="edges"
-    :class="{ dark }"
+    :class="{ dark: theme === 'dark' }"
     class="basicflow"
     :default-viewport="{ zoom: 1.5 }"
     :min-zoom="0.2"
@@ -110,11 +103,6 @@ function toggleDarkMode() {
 
       <ControlButton title="Shuffle Node Positions" @click="updatePos">
         <Icon name="update" />
-      </ControlButton>
-
-      <ControlButton title="Toggle Dark Mode" @click="toggleDarkMode">
-        <Icon v-if="dark" name="sun" />
-        <Icon v-else name="moon" />
       </ControlButton>
 
       <ControlButton title="Log `toObject`" @click="logToObject">

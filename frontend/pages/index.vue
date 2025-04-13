@@ -1,7 +1,9 @@
 <template>
-  <div style="height: 100%">
-    <ClientOnly>
-      <Flow />
-    </ClientOnly>
-  </div>
+  <Canvas />
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: 'default'
+})
+</script>
