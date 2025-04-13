@@ -1,0 +1,16 @@
+{
+  "name": "@vue-flow/examples-nuxt3",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "lint": "eslint --ext .js,.ts,.vue ./"
+  },
+  "devDependencies": {
+    "@vue-flow/background": "^1.3.2",
+    "@vue-flow/controls": "^1.1.2",
+    "@vue-flow/core": "^1.42.5",
+    "@vue-flow/minimap": "^1.5.3",
+    "nuxt": "^3.16.2"
+  }
+}
