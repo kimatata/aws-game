@@ -18,7 +18,6 @@ body,
 }
 
 #__nuxt {
-  text-transform: uppercase;
   font-family: 'JetBrains Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

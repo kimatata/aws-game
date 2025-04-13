@@ -1,11 +1,17 @@
+/* Vuetify button */
+.v-btn {
+  text-transform: none !important;
+}
+
+/* Vue flow */
 .basicflow.dark {
   background: #000000;
-  color: #FFFFFB;
+  color: #fffffb;
 }
 
 .basicflow.dark .vue-flow__node {
   background: hsl(0, 0%, 10%);
-  color: #FFFFFB;
+  color: #fffffb;
 }
 
 .basicflow.dark .vue-flow__node.selected {
@@ -20,7 +26,7 @@
 }
 
 .basicflow.dark .vue-flow__controls {
-  border: 1px solid #FFFFFB;
+  border: 1px solid #fffffb;
 }
 
 .basicflow .vue-flow__controls .vue-flow__controls-button {
@@ -28,10 +34,9 @@
   border-right: 1px solid #eee;
 }
 
-
 .basicflow.dark .vue-flow__controls .vue-flow__controls-button {
   background: hsl(0, 0%, 20%);
-  fill: #FFFFFB;
+  fill: #fffffb;
   border: none;
 }
 
@@ -44,5 +49,5 @@
 }
 
 .basicflow.dark .vue-flow__edge-text {
-  fill: #FFFFFB;
+  fill: #fffffb;
 }

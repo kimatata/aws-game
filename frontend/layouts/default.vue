@@ -3,20 +3,35 @@
     <v-app :theme="theme">
       <v-app-bar>
         <template v-slot:prepend>
-          <img class="ps-2" :height="30" src="/icon-192.png" />
-          <div class="ps-2">AWS Game</div>
+          <NuxtLink to="/" class="d-flex align-center text-decoration-none">
+            <img class="ps-2" :height="30" src="/icon-192.png" />
+            <div class="ps-2 text-white">AWS Game</div>
+          </NuxtLink>
         </template>
         <v-spacer></v-spacer>
-
-        <v-btn :icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'" slim
-          @click="onClick">
+        <v-btn variant="text" to="/about" nuxt>
+          About
         </v-btn>
+        <v-btn :icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'" slim @click="onClick" />
       </v-app-bar>
 
       <v-navigation-drawer>
-        <v-list>
-          <v-list-item title="Navigation drawer"></v-list-item>
-        </v-list>
+        <v-expansion-panels variant="accordion">
+          <v-expansion-panel title="Tutorials">
+            <v-expansion-panel-text>
+              <v-list>
+                <v-btn variant="text" to="/tutorials/handle-access" nuxt>
+                  Access handling
+                </v-btn>
+              </v-list>
+            </v-expansion-panel-text>
+          </v-expansion-panel>
+          <v-expansion-panel title="Associate level">
+          </v-expansion-panel>
+          <v-expansion-panel title="Professional level">
+          </v-expansion-panel>
+        </v-expansion-panels>
+
       </v-navigation-drawer>
 
       <v-main>
